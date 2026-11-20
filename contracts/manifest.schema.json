@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "System admin manifest",
+  "description": "필드 초안, founder-a 검토 필요",
+  "type": "object",
+  "required": ["system", "menu"],
+  "properties": {
+    "system": {
+      "type": "string",
+      "description": "시스템 이름"
+    },
+    "menu": {
+      "type": "array",
+      "description": "메뉴 항목 목록",
+      "items": {
+        "type": "object",
+        "required": ["label", "path"],
+        "properties": {
+          "label": { "type": "string", "description": "표시 이름" },
+          "path": { "type": "string", "description": "경로" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
